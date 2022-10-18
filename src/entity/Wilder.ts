@@ -23,7 +23,7 @@ export class Wilder implements IWilder {
   description: string;
 
   @Field({ nullable: true })
-  @Column()
+  @Column({ nullable: true })
   avatar?: string;
 
   @Field(() => [Grade], { nullable: true })

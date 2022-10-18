@@ -1,4 +1,6 @@
 import { InputType, Field } from "type-graphql";
+import { Grade } from "../../entity/Grade";
+import { GradeInput } from "./gradeInput";
 
 @InputType({ description: "New wilder data" })
 export class CreateWilderInput {
@@ -11,6 +13,9 @@ export class CreateWilderInput {
   @Field()
   description: string;
 
-  @Field((type) => String, { nullable: true })
+  @Field(() => String, { nullable: true })
   avatar: string;
+
+  @Field(() => [GradeInput], { nullable: true })
+  grades: GradeInput[];
 }
